@@ -1,0 +1,28 @@
+burger-time-backend/
+├── prisma/
+│   └── schema.prisma               # Modèles de données
+├── src/
+│   ├── controllers/                 # Logique métier
+│   │   ├── authController.js        # Inscription/connexion (livreurs/admins)
+│   │   ├── clientController.js      # Menu, commandes (public)
+│   │   ├── livreurController.js     # Commandes pour livreurs
+│   │   └── adminController.js       # Dashboard, gestion produits/utilisateurs
+│   ├── middlewares/                  # Middlewares personnalisés
+│   │   ├── auth.js                   # Vérification JWT + rôles
+│   │   ├── validation.js              # Validation des entrées (express-validator)
+│   │   └── errorHandler.js            # Gestion centralisée des erreurs
+│   ├── routes/                        # Définition des routes
+│   │   ├── authRoutes.js
+│   │   ├── clientRoutes.js
+│   │   ├── livreurRoutes.js
+│   │   └── adminRoutes.js
+│   ├── socket/                         # Configuration Socket.io
+│   │   └── index.js
+│   ├── utils/                           # Fonctions utilitaires (optionnel)
+│   │   └── generateToken.js             # Création de token JWT
+│   └── app.js                            # Configuration Express
+├── .env                                   # Variables d'environnement
+├── .gitignore
+├── server.js                              # Point d'entrée du serveur
+├── package.json
+└── README.md
