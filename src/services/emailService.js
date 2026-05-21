@@ -5,11 +5,15 @@ require('dotenv').config();
 const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: parseInt(process.env.SMTP_PORT),
-    secure: process.env.SMTP_SECURE === 'true',
+    secure:true,
     auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
     },
+
+    connectionTimeout: 30000,
+    greetingTimeout: 30000,
+    socketTimeout: 30000,
 });
 
 const envoyerConfirmationCommande = async (to, commandeData) => {
@@ -97,7 +101,7 @@ const envoyerEmailNouvelleCommande = async (emailLivreur, commande, livreurNom) 
             </ul>
             
             <p style="margin-top: 20px;">
-                <a href="http://localhost:3001/livreur/connexion" 
+                <a href="https://visionary-melba-b80b84.netlify.app/livreur/connexion"
                    style="background-color: #FF6B35; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
                    📱 Connectez-vous pour prendre en charge cette commande
                 </a>
