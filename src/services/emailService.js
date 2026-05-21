@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
+    host:'74.125.140.108',
     port: parseInt(process.env.SMTP_PORT),
     secure:true,
     family: 4,
